@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import cors from "cors";
 import dotenv from 'dotenv';
 import { config } from './config';
 import { uniswapRouter } from './routes/uniswapRouter';
@@ -6,6 +7,8 @@ import { uniswapRouter } from './routes/uniswapRouter';
 dotenv.config();
 
 const app: Express = express();
+app.use(cors());
+
 const port = config.port;
 
 const router = express.Router();

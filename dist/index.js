@@ -4,11 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const config_1 = require("./config");
 const uniswapRouter_1 = require("./routes/uniswapRouter");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 const port = config_1.config.port;
 const router = express_1.default.Router();
 router.get('/', (req, res) => {
