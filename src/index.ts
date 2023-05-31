@@ -55,3 +55,4 @@ app.listen(port, () => {
 //     "rimraf": "^5.0.1"
 //   }
 // }
+// vercel       builds "config": { "includeFiles": ["dist/**"] }
